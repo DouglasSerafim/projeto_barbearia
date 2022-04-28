@@ -1,11 +1,11 @@
-// ignore_for_file: prefer_const_constructors
+// ignore_for_file: prefer_const_constructors, deprecated_member_use
 
 import 'package:flutter/material.dart';
 import 'package:trabalho_flutter/pages/login/LoginPage.dart';
 import 'package:trabalho_flutter/pages/perfil/perfil.dart';
 import 'package:trabalho_flutter/pages/sobre/Sobre.dart';
 
-class Sobre extends StatelessWidget {
+class home extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -17,7 +17,11 @@ class Sobre extends StatelessWidget {
             child: Image.asset("assets/logo.png"),
           ),
           UserAccountsDrawerHeader(
-            //currentAccountPicture: Image.network( ),
+            currentAccountPicture: CircleAvatar(
+              child: ClipOval(
+                child: Image.asset("assets/douglas.png"),
+              ),
+            ),
             accountName: Text(
               'Olá, Plotze',
               style: TextStyle(
@@ -70,19 +74,36 @@ class Sobre extends StatelessWidget {
             leading: Icon(Icons.outbond),
             title: Text('Sair'),
             subtitle: Text('Volte Sempre :)'),
-            onTap: () {
-              Navigator.pushReplacement(
-                context,
-                MaterialPageRoute(
-                  builder: (context) => LoginPage(),
-                ),
-              );
-            },
+            onTap: () => showDialog<String>(
+              context: context,
+              builder: (BuildContext context) => AlertDialog(
+                title: const Text('AlertDialog Title'),
+                content: const Text('AlertDialog description'),
+                actions: <Widget>[
+                  TextButton(
+                    onPressed: () => Navigator.pop(context, 'Cancel'),
+                    child: const Text('Cancel'),
+                  ),
+                  TextButton(
+                    onPressed: () => Navigator.pop(context, 'OK'),
+                    child: const Text('OK'),
+                  ),
+                ],
+              ),
+            ),
+            // {
+            //   Navigator.pushReplacement(
+            //     context,
+            //     MaterialPageRoute(
+            //       builder: (context) => LoginPage(),
+            //     ),
+            //   ),
+            // },
           ),
         ]),
       ),
       appBar: AppBar(
-        title: Text('Sobre'),
+        title: Text('Home'),
       ),
       body: Container(
         padding: EdgeInsets.only(
@@ -97,7 +118,7 @@ class Sobre extends StatelessWidget {
               height: 30,
             ),
             Text(
-              "Quem nós somos?",
+              "Olá Plotze,",
               style: TextStyle(
                 fontSize: 40,
                 fontWeight: FontWeight.w500,
@@ -108,7 +129,7 @@ class Sobre extends StatelessWidget {
               height: 30,
             ),
             Text(
-              "Este aplicativo foi desenvolvido para aula de Programação de dispositivos móveis, ministrada pelo Dr. Professor Plotze, pelos discentes Douglas e Lucas do quarto semestre de ADS. \n\n\n Este aplicativo foi desenvolvido em Flutter no Visual Studio Code com o objetivo de ser uma ponte facilitadora de agendamentos de serviços estéticos de uma barbearia.",
+              "Bem vindo ao Barber Shop, aqui você podera conhecer os nossos profissionais, fazer agendamentos e consultar seus horarios agendados.\n\n\nClique no menu lateral e conheça todas as nossas funções.",
               style: TextStyle(
                 fontSize: 16,
                 fontWeight: FontWeight.w400,
@@ -118,49 +139,10 @@ class Sobre extends StatelessWidget {
             SizedBox(
               height: 60,
             ),
-            UserAccountsDrawerHeader(
-              currentAccountPicture: CircleAvatar(
-                child: ClipOval(
-                  child: Image.asset("assets/douglas.png"),
-                ),
-              ),
-              accountName: Text(
-                'Douglas',
-                style: TextStyle(
-                  fontWeight: FontWeight.bold,
-                  color: Colors.black,
-                  fontSize: 20,
-                ),
-              ),
-              accountEmail: Text('douglas.serafim@fatecrp.gov.br'),
-            ),
-            Center(
-              child: Text(
-                "Douglas",
-                style: TextStyle(
-                  fontWeight: FontWeight.bold,
-                  color: Colors.black,
-                  fontSize: 20,
-                ),
-              ),
-            ),
-            SizedBox(
-              height: 30,
-            ),
             SizedBox(
               width: 128,
-              height: 128,
-              child: Image.asset("assets/lucas.jpg"),
-            ),
-            Center(
-              child: Text(
-                "Lucas",
-                style: TextStyle(
-                  fontWeight: FontWeight.bold,
-                  color: Colors.black,
-                  fontSize: 20,
-                ),
-              ),
+              height: 328,
+              child: Image.asset("assets/barber.gif"),
             ),
           ],
         ),
