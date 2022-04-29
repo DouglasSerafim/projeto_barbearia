@@ -3,6 +3,10 @@
 import 'package:flutter/material.dart';
 import 'package:trabalho_flutter/pages/login/LoginPage.dart';
 import 'package:trabalho_flutter/pages/perfil/perfil.dart';
+import 'package:trabalho_flutter/pages/servicos/agendar.dart';
+import 'package:trabalho_flutter/pages/servicos/meusAgendamentos.dart';
+import 'package:trabalho_flutter/pages/servicos/profissionais.dart';
+import 'package:trabalho_flutter/pages/servicos/servicos.dart';
 import 'package:trabalho_flutter/pages/sobre/Sobre.dart';
 
 class home extends StatelessWidget {
@@ -19,7 +23,7 @@ class home extends StatelessWidget {
           UserAccountsDrawerHeader(
             currentAccountPicture: CircleAvatar(
               child: ClipOval(
-                child: Image.asset("assets/douglas.png"),
+                child: Image.asset("assets/plotze.jpg"),
               ),
             ),
             accountName: Text(
@@ -32,6 +36,7 @@ class home extends StatelessWidget {
             ),
             accountEmail: Text('plotze@fatecrp.gov.br'),
           ),
+        
           ListTile(
             leading: Icon(Icons.person),
             title: Text('Perfil'),
@@ -46,19 +51,59 @@ class home extends StatelessWidget {
             },
           ),
           ListTile(
+            leading: Icon(Icons.people_outline_sharp),
+            title: Text('Profissionais'),
+            subtitle: Text('Os nossos mestres da barba!'),
+            onTap: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (context) => profissionais(),
+                ),
+              );
+            },
+          ),
+          ListTile(
+            leading: Icon(Icons.work_rounded),
+            title: Text('Serviços'),
+            subtitle: Text('Aqui você escolhe o que fazemos de melhor'),
+            onTap: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (context) => servicos(),
+                ),
+              );
+            },
+          ),
+          ListTile(
             leading: Icon(Icons.calendar_view_month),
             title: Text('Agendar Serviços'),
             subtitle: Text('Vamos dar aquele trato?'),
-            onTap: () {},
+            onTap: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (context) => agendar(),
+                ),
+              );
+            },
           ),
           ListTile(
             leading: Icon(Icons.calendar_month),
             title: Text('Meus Agendamentos'),
             subtitle: Text('Não esquece o dia, ok?'),
-            onTap: () {},
+            onTap: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (context) => meusAgendamentos(),
+                ),
+              );
+            },
           ),
           ListTile(
-            leading: Icon(Icons.people),
+            leading: Icon(Icons.person),
             title: Text('Sobre'),
             subtitle: Text('Quem nós somos'),
             onTap: () {
@@ -77,16 +122,21 @@ class home extends StatelessWidget {
             onTap: () => showDialog<String>(
               context: context,
               builder: (BuildContext context) => AlertDialog(
-                title: const Text('AlertDialog Title'),
-                content: const Text('AlertDialog description'),
+                title: const Text('Saindo...'),
+                content: const Text('Você realmente deseja sair?'),
                 actions: <Widget>[
                   TextButton(
-                    onPressed: () => Navigator.pop(context, 'Cancel'),
-                    child: const Text('Cancel'),
+                    onPressed: () => Navigator.pop(context, 'Não'),
+                    child: const Text('Não'),
                   ),
                   TextButton(
-                    onPressed: () => Navigator.pop(context, 'OK'),
-                    child: const Text('OK'),
+                    onPressed: () => Navigator.pushReplacement(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => LoginPage(),
+                      ),
+                    ),
+                    child: const Text('Sim'),
                   ),
                 ],
               ),

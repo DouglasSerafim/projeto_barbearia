@@ -6,80 +6,21 @@ class perfil extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      drawer: Drawer(
-        child: Column(children: [
-          SizedBox(
-            width: 128,
-            height: 128,
-            child: Image.asset("assets/logo.png"),
-          ),
-          UserAccountsDrawerHeader(
-            //currentAccountPicture: Image.network( ),
-            accountName: Text(
-              'Olá, Plotze',
-              style: TextStyle(
-                fontWeight: FontWeight.bold,
-                color: Colors.black,
-                fontSize: 20,
-              ),
-            ),
-            accountEmail: Text('plotze@fatecrp.gov.br'),
-          ),
-          ListTile(
-            leading: Icon(Icons.person),
-            title: Text('Perfil'),
-            subtitle: Text('Admire a sua barba!'),
-            onTap: () {
-              Navigator.push(
-                context,
-                MaterialPageRoute(
-                  builder: (context) => perfil(),
-                ),
-              );
-            },
-          ),
-          ListTile(
-            leading: Icon(Icons.calendar_view_month),
-            title: Text('Agendar Serviços'),
-            subtitle: Text('Vamos dar aquele trato?'),
-            onTap: () {},
-          ),
-          ListTile(
-            leading: Icon(Icons.calendar_month),
-            title: Text('Meus Agendamentos'),
-            subtitle: Text('Não esquece o dia, ok?'),
-            onTap: () {},
-          ),
-          ListTile(
-            leading: Icon(Icons.people),
-            title: Text('Sobre'),
-            subtitle: Text('Quem nós somos'),
-            onTap: () {
-              Navigator.push(
-                context,
-                MaterialPageRoute(
-                  builder: (context) => Sobre(),
-                ),
-              );
-            },
-          ),
-          ListTile(
-            leading: Icon(Icons.outbond),
-            title: Text('Sair'),
-            subtitle: Text('Volte Sempre :)'),
-            onTap: () {
-              Navigator.pushReplacement(
-                context,
-                MaterialPageRoute(
-                  builder: (context) => LoginPage(),
-                ),
-              );
-            },
-          ),
-        ]),
-      ),
       appBar: AppBar(
-        title: Text('Perfil'),
+        title: Text(
+          "Perfil",
+          style: TextStyle(
+            fontWeight: FontWeight.bold,
+            color: Colors.black,
+            fontSize: 20,
+          ),
+        ),
+        backgroundColor: Colors.white,
+        leading: IconButton(
+          icon: Icon(Icons.arrow_back),
+          color: Colors.black38,
+          onPressed: () => Navigator.pop(context, false),
+        ),
       ),
       body: Container(
         padding: EdgeInsets.only(top: 10, left: 40, right: 40),

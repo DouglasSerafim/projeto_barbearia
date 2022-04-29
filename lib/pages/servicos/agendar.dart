@@ -1,18 +1,15 @@
-// ignore_for_file: prefer_const_constructors
-
-import 'dart:ui';
-
 import 'package:flutter/material.dart';
+import 'package:trabalho_flutter/pages/servicos/profissionais.dart';
 
-class ResetPasswordPage extends StatelessWidget {
-  const ResetPasswordPage({Key? key}) : super(key: key);
+class agendar extends StatelessWidget {
+  const agendar({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
         title: Text(
-          "Barber Shop",
+          "Agendamentos de Serviços",
           style: TextStyle(
             fontWeight: FontWeight.bold,
             color: Colors.black,
@@ -27,59 +24,43 @@ class ResetPasswordPage extends StatelessWidget {
         ),
       ),
       body: Container(
-        padding: EdgeInsets.only(
-          top: 60,
-          left: 40,
-          right: 40,
-        ),
+        padding: EdgeInsets.only(top: 10, left: 40, right: 40),
         color: Colors.white,
         child: ListView(
           children: <Widget>[
-            SizedBox(
+            Container(
               width: 200,
               height: 200,
-              child: Image.asset("assets/sendPassword.png"),
-            ),
-            SizedBox(
-              height: 20,
-            ),
-            Text(
-              "Esqueceu a sua senha?",
-              style: TextStyle(
-                fontSize: 32,
-                fontWeight: FontWeight.w500,
+              alignment: Alignment(0.0, 1.15),
+              decoration: new BoxDecoration(
+                image: new DecorationImage(
+                  image: AssetImage("assets/2693507.png"),
+                  fit: BoxFit.fitHeight,
+                ),
               ),
-              textAlign: TextAlign.center,
             ),
             SizedBox(
-              height: 10,
-            ),
-            Text(
-              "Por favor, informe o E-mail cadastrado para que possamos enviar um link com instruções para cadastrar uma nova senha",
-              style: TextStyle(
-                fontSize: 16,
-                fontWeight: FontWeight.w400,
-              ),
-              textAlign: TextAlign.center,
-            ),
-            SizedBox(
-              height: 10,
+              height: 60,
             ),
             TextFormField(
-              keyboardType: TextInputType.emailAddress,
+              keyboardType: TextInputType.text,
               decoration: InputDecoration(
-                  labelText: "E-mail",
+                  labelText: "Data",
                   labelStyle: TextStyle(
-                    color: Colors.black38,
-                    fontWeight: FontWeight.w400,
-                    fontSize: 20,
-                  )),
-              style: TextStyle(
-                fontSize: 20,
-              ),
+                      color: Colors.black38, fontWeight: FontWeight.w400)),
             ),
             SizedBox(
               height: 20,
+            ),
+            TextFormField(
+              keyboardType: TextInputType.number,
+              decoration: InputDecoration(
+                  labelText: "Horários",
+                  labelStyle: TextStyle(
+                      color: Colors.black38, fontWeight: FontWeight.w400)),
+            ),
+            SizedBox(
+              height: 60,
             ),
             Container(
               height: 60,
@@ -93,7 +74,7 @@ class ResetPasswordPage extends StatelessWidget {
               child: SizedBox.expand(
                 child: FlatButton(
                   child: Text(
-                    "Cadastrar",
+                    "Agendar Serviço",
                     style: TextStyle(
                       fontWeight: FontWeight.bold,
                       color: Colors.white,
@@ -101,7 +82,14 @@ class ResetPasswordPage extends StatelessWidget {
                     ),
                     textAlign: TextAlign.center,
                   ),
-                  onPressed: () => {},
+                  onPressed: () => {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => profissionais(),
+                      ),
+                    )
+                  },
                 ),
               ),
             ),

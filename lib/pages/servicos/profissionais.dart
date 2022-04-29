@@ -1,15 +1,16 @@
-// ignore_for_file: prefer_const_constructors
+// ignore_for_file: override_on_non_overriding_member
 
 import 'package:flutter/material.dart';
-import 'package:trabalho_flutter/pages/login/LoginPage.dart';
 
-class Sobre extends StatelessWidget {
+class profissionais extends StatelessWidget {
+  const profissionais({Key? key}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
         title: Text(
-          "Sobre",
+          "Profissionais",
           style: TextStyle(
             fontWeight: FontWeight.bold,
             color: Colors.black,
@@ -36,7 +37,7 @@ class Sobre extends StatelessWidget {
               height: 30,
             ),
             Text(
-              "Quem nós somos?",
+              "Conheça os nossos barbeiros!",
               style: TextStyle(
                 fontSize: 40,
                 fontWeight: FontWeight.w500,
@@ -45,14 +46,6 @@ class Sobre extends StatelessWidget {
             ),
             SizedBox(
               height: 30,
-            ),
-            Text(
-              "Este aplicativo foi desenvolvido para aula de Programação de dispositivos móveis, ministrada pelo Dr. Professor Plotze, pelos discentes Douglas e Lucas do quarto semestre de ADS. \n\n\n Este aplicativo foi desenvolvido em Flutter no Visual Studio Code com o objetivo de ser uma ponte facilitadora de agendamentos de serviços estéticos de uma barbearia.",
-              style: TextStyle(
-                fontSize: 16,
-                fontWeight: FontWeight.w400,
-              ),
-              textAlign: TextAlign.center,
             ),
             SizedBox(
               height: 60,
@@ -72,6 +65,15 @@ class Sobre extends StatelessWidget {
                 ),
               ),
             ),
+            Center(
+              child: Text(
+                "Barbeiro 1",
+                style: TextStyle(
+                  color: Colors.black,
+                  fontSize: 15,
+                ),
+              ),
+            ),
             SizedBox(
               height: 30,
             ),
@@ -87,6 +89,15 @@ class Sobre extends StatelessWidget {
                   fontWeight: FontWeight.bold,
                   color: Colors.black,
                   fontSize: 20,
+                ),
+              ),
+            ),
+            Center(
+              child: Text(
+                "Barbeiro 2",
+                style: TextStyle(
+                  color: Colors.black,
+                  fontSize: 15,
                 ),
               ),
             ),
