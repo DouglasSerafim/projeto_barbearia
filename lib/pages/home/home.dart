@@ -14,143 +14,136 @@ class home extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       drawer: Drawer(
-        child: Column(children: [
-          SizedBox(
-            width: 128,
-            height: 128,
-            child: Image.asset("assets/logo.png"),
-          ),
-          UserAccountsDrawerHeader(
-            currentAccountPicture: CircleAvatar(
-              child: ClipOval(
-                child: Image.asset("assets/plotze.jpg"),
-              ),
+        child: Column(
+          children: [
+            SizedBox(
+              width: 128,
+              height: 128,
+              child: Image.asset("assets/logo.png"),
             ),
-            accountName: Text(
-              'Olá, Plotze',
-              style: TextStyle(
-                fontWeight: FontWeight.bold,
-                color: Colors.black,
-                fontSize: 20,
+            UserAccountsDrawerHeader(
+              currentAccountPicture: CircleAvatar(
+                child: ClipOval(
+                  child: Image.asset("assets/plotze.jpg"),
+                ),
               ),
+              accountName: Text(
+                'Olá, Plotze',
+                style: TextStyle(
+                  fontWeight: FontWeight.bold,
+                  color: Colors.black,
+                  fontSize: 20,
+                ),
+              ),
+              accountEmail: Text('plotze@fatecrp.gov.br'),
             ),
-            accountEmail: Text('plotze@fatecrp.gov.br'),
-          ),
-        
-          ListTile(
-            leading: Icon(Icons.person),
-            title: Text('Perfil'),
-            subtitle: Text('Admire a sua barba!'),
-            onTap: () {
-              Navigator.push(
-                context,
-                MaterialPageRoute(
-                  builder: (context) => perfil(),
-                ),
-              );
-            },
-          ),
-          ListTile(
-            leading: Icon(Icons.people_outline_sharp),
-            title: Text('Profissionais'),
-            subtitle: Text('Os nossos mestres da barba!'),
-            onTap: () {
-              Navigator.push(
-                context,
-                MaterialPageRoute(
-                  builder: (context) => profissionais(),
-                ),
-              );
-            },
-          ),
-          ListTile(
-            leading: Icon(Icons.work_rounded),
-            title: Text('Serviços'),
-            subtitle: Text('Aqui você escolhe o que fazemos de melhor'),
-            onTap: () {
-              Navigator.push(
-                context,
-                MaterialPageRoute(
-                  builder: (context) => servicos(),
-                ),
-              );
-            },
-          ),
-          ListTile(
-            leading: Icon(Icons.calendar_view_month),
-            title: Text('Agendar Serviços'),
-            subtitle: Text('Vamos dar aquele trato?'),
-            onTap: () {
-              Navigator.push(
-                context,
-                MaterialPageRoute(
-                  builder: (context) => agendar(),
-                ),
-              );
-            },
-          ),
-          ListTile(
-            leading: Icon(Icons.calendar_month),
-            title: Text('Meus Agendamentos'),
-            subtitle: Text('Não esquece o dia, ok?'),
-            onTap: () {
-              Navigator.push(
-                context,
-                MaterialPageRoute(
-                  builder: (context) => meusAgendamentos(),
-                ),
-              );
-            },
-          ),
-          ListTile(
-            leading: Icon(Icons.person),
-            title: Text('Sobre'),
-            subtitle: Text('Quem nós somos'),
-            onTap: () {
-              Navigator.push(
-                context,
-                MaterialPageRoute(
-                  builder: (context) => Sobre(),
-                ),
-              );
-            },
-          ),
-          ListTile(
-            leading: Icon(Icons.outbond),
-            title: Text('Sair'),
-            subtitle: Text('Volte Sempre :)'),
-            onTap: () => showDialog<String>(
-              context: context,
-              builder: (BuildContext context) => AlertDialog(
-                title: const Text('Saindo...'),
-                content: const Text('Você realmente deseja sair?'),
-                actions: <Widget>[
-                  TextButton(
-                    onPressed: () => Navigator.pop(context, 'Não'),
-                    child: const Text('Não'),
+            ListTile(
+              leading: Icon(Icons.person),
+              title: Text('Perfil'),
+              subtitle: Text('Admire a sua barba!'),
+              onTap: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => perfil(),
                   ),
-                  TextButton(
-                    onPressed: () => Navigator.pushReplacement(
-                      context,
-                      MaterialPageRoute(
-                        builder: (context) => LoginPage(),
-                      ),
+                );
+              },
+            ),
+            ListTile(
+              leading: Icon(Icons.people_outline_sharp),
+              title: Text('Profissionais'),
+              subtitle: Text('Os nossos mestres da barba!'),
+              onTap: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => profissionais(),
+                  ),
+                );
+              },
+            ),
+            ListTile(
+              leading: Icon(Icons.work_rounded),
+              title: Text('Serviços'),
+              subtitle: Text('Aqui você escolhe o que fazemos de melhor'),
+              onTap: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => servicos(),
+                  ),
+                );
+              },
+            ),
+            ListTile(
+              leading: Icon(Icons.calendar_view_month),
+              title: Text('Agendar Serviços'),
+              subtitle: Text('Vamos dar aquele trato?'),
+              onTap: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => agendar(),
+                  ),
+                );
+              },
+            ),
+            ListTile(
+              leading: Icon(Icons.calendar_month),
+              title: Text('Meus Agendamentos'),
+              subtitle: Text('Não esquece o dia, ok?'),
+              onTap: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => meusAgendamentos(),
+                  ),
+                );
+              },
+            ),
+            ListTile(
+              leading: Icon(Icons.person),
+              title: Text('Sobre'),
+              subtitle: Text('Quem nós somos'),
+              onTap: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => Sobre(),
+                  ),
+                );
+              },
+            ),
+            ListTile(
+              leading: Icon(Icons.outbond),
+              title: Text('Sair'),
+              subtitle: Text('Volte Sempre :)'),
+              onTap: () => showDialog<String>(
+                context: context,
+                builder: (BuildContext context) => AlertDialog(
+                  title: const Text('Saindo...'),
+                  content: const Text('Você realmente deseja sair?'),
+                  actions: <Widget>[
+                    TextButton(
+                      onPressed: () => Navigator.pop(context, 'Não'),
+                      child: const Text('Não'),
                     ),
-                    child: const Text('Sim'),
-                  ),
-                ],
+                    TextButton(
+                      onPressed: () => Navigator.pushReplacement(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => LoginPage(),
+                        ),
+                      ),
+                      child: const Text('Sim'),
+                    ),
+                  ],
+                ),
               ),
             ),
-            // {
-            //   Navigator.pushReplacement(
-            //     context,
-            //     MaterialPageRoute(
-            //       builder: (context) => LoginPage(),
-            //     ),
-            //   ),
-            // },
-          ),
-        ]),
+          ],
+        ),
       ),
       appBar: AppBar(
         title: Text('Home'),

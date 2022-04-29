@@ -1,5 +1,7 @@
 // ignore_for_file: override_on_non_overriding_member
 
+import 'dart:ui';
+
 import 'package:flutter/material.dart';
 
 class profissionais extends StatelessWidget {
@@ -45,61 +47,36 @@ class profissionais extends StatelessWidget {
               textAlign: TextAlign.center,
             ),
             SizedBox(
-              height: 30,
-            ),
-            SizedBox(
               height: 60,
             ),
-            SizedBox(
-              width: 128,
-              height: 128,
-              child: Image.asset("assets/douglas.png"),
-            ),
-            Center(
-              child: Text(
-                "Douglas",
-                style: TextStyle(
-                  fontWeight: FontWeight.bold,
-                  color: Colors.black,
-                  fontSize: 20,
-                ),
-              ),
-            ),
-            Center(
-              child: Text(
-                "Barbeiro 1",
-                style: TextStyle(
-                  color: Colors.black,
-                  fontSize: 15,
-                ),
-              ),
+            ListTile(
+              leading: Image.asset("assets/lucas.jpg"),
+              title: Text('Lucas'),
+              subtitle: Text('Barbeiro 1'),
+              onTap: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => profissionais(),
+                  ),
+                );
+              },
             ),
             SizedBox(
               height: 30,
             ),
-            SizedBox(
-              width: 128,
-              height: 128,
-              child: Image.asset("assets/lucas.jpg"),
-            ),
-            Center(
-              child: Text(
-                "Lucas",
-                style: TextStyle(
-                  fontWeight: FontWeight.bold,
-                  color: Colors.black,
-                  fontSize: 20,
-                ),
-              ),
-            ),
-            Center(
-              child: Text(
-                "Barbeiro 2",
-                style: TextStyle(
-                  color: Colors.black,
-                  fontSize: 15,
-                ),
-              ),
+            ListTile(
+              leading: Image.asset("assets/douglas.png"),
+              title: Text('Douglas'),
+              subtitle: Text('Barbeiro 1'),
+              onTap: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => profissionais(),
+                  ),
+                );
+              },
             ),
           ],
         ),

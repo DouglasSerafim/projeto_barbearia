@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:trabalho_flutter/pages/home/home.dart';
+import 'package:trabalho_flutter/pages/servicos/profissionais.dart';
 
 class servicos extends StatelessWidget {
   const servicos({Key? key}) : super(key: key);
@@ -57,10 +58,10 @@ class servicos extends StatelessWidget {
                     textAlign: TextAlign.center,
                   ),
                   onPressed: () => {
-                    Navigator.pushReplacement(
+                    Navigator.push(
                       context,
                       MaterialPageRoute(
-                        builder: (context) => home(),
+                        builder: (context) => profissionais(),
                       ),
                     )
                   },
@@ -92,10 +93,10 @@ class servicos extends StatelessWidget {
                     textAlign: TextAlign.center,
                   ),
                   onPressed: () => {
-                    Navigator.pushReplacement(
+                    Navigator.push(
                       context,
                       MaterialPageRoute(
-                        builder: (context) => home(),
+                        builder: (context) => profissionais(),
                       ),
                     )
                   },
@@ -127,10 +128,10 @@ class servicos extends StatelessWidget {
                     textAlign: TextAlign.center,
                   ),
                   onPressed: () => {
-                    Navigator.pushReplacement(
+                    Navigator.push(
                       context,
                       MaterialPageRoute(
-                        builder: (context) => home(),
+                        builder: (context) => profissionais(),
                       ),
                     )
                   },
@@ -139,31 +140,6 @@ class servicos extends StatelessWidget {
             ),
             SizedBox(
               height: 30,
-            ),
-            Container(
-              height: 60,
-              alignment: Alignment.centerLeft,
-              decoration: BoxDecoration(
-                color: Colors.green,
-                borderRadius: BorderRadius.all(
-                  Radius.circular(5),
-                ),
-              ),
-              child: SizedBox.expand(
-                // ignore: deprecated_member_use
-                child: FlatButton(
-                  child: Text(
-                    "Avançar",
-                    style: TextStyle(
-                      fontWeight: FontWeight.bold,
-                      color: Colors.white,
-                      fontSize: 20,
-                    ),
-                    textAlign: TextAlign.center,
-                  ),
-                  onPressed: () => {},
-                ),
-              ),
             ),
             SizedBox(
               height: 10,

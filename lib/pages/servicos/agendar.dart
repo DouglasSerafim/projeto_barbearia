@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:trabalho_flutter/pages/servicos/profissionais.dart';
+import 'package:trabalho_flutter/pages/servicos/servicos.dart';
 
 class agendar extends StatelessWidget {
   const agendar({Key? key}) : super(key: key);
@@ -86,13 +87,14 @@ class agendar extends StatelessWidget {
                     Navigator.push(
                       context,
                       MaterialPageRoute(
-                        builder: (context) => profissionais(),
+                        builder: (context) => servicos(),
                       ),
                     )
                   },
                 ),
               ),
             ),
+            
           ],
         ),
       ),
